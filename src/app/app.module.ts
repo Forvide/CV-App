@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { CommentSectionComponent } from './comment-section/comment-section.component';
 import { CommentFormComponent } from './comment-form/comment-form.component';
+import { StyleDirective } from './directives/style.directive';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { CommentFormComponent } from './comment-form/comment-form.component';
     AppComponent,
     NavComponent,
     CommentSectionComponent,
-    CommentFormComponent
+    CommentFormComponent,
+    StyleDirective
   ],
   imports: [
     BrowserModule,
