@@ -13,7 +13,9 @@ export interface CommentInterface {
 })
 
 export class AppComponent {
+  date: Date = new Date();
   title = 'Amangeldy M CV';
+  showCommentSection: boolean = false;
   
   comments: CommentInterface[] = [
     {name: 'Murat', commentText: 'Mytextasdfsadf', id: 1},

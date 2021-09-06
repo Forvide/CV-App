@@ -7,8 +7,14 @@
 ></app-comment-form>
 
 <hr/>
-<app-comment-section
+
+<button class="btn btn-info" (click)="showCommentSection = !showCommentSection">Display comments</button>
+
+<div *appHideElement="showCommentSection">
+    <app-comment-section
     appStyle
     *ngFor="let comment of comments"
     [comment] = 'comment'
-></app-comment-section>
+    ></app-comment-section>
+</div>
+<div class="date">{{date | date:'fullDate'}}</div>

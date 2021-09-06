@@ -9,6 +9,7 @@ import { NavComponent } from './nav/nav.component';
 import { CommentSectionComponent } from './comment-section/comment-section.component';
 import { CommentFormComponent } from './comment-form/comment-form.component';
 import { StyleDirective } from './directives/style.directive';
+import { HideElementDirective } from './directives/hide-element.directive';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { StyleDirective } from './directives/style.directive';
     NavComponent,
     CommentSectionComponent,
     CommentFormComponent,
-    StyleDirective
+    StyleDirective,
+    HideElementDirective
   ],
   imports: [
     BrowserModule,
