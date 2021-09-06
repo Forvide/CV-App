@@ -1,4 +1,4 @@
-li {
+.navItem {
     background-color: #474444;
 }
 
@@ -7,3 +7,7 @@ a {
     font-weight: 100;
 }
 
+input {
+    max-width: 50%;
+    margin-left: 2rem;
+}

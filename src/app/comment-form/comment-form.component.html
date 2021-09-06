@@ -1,5 +1,5 @@
-<div class="container">
-    <input type="text" placeholder="Your name" [(ngModel)]="name">
-    <input type="text" placeholder="Leave a comment here" [(ngModel)]="commentText">
+<div class="container comment-form">
+    <input class="nameInput" type="text" placeholder="Your name" [(ngModel)]="name">
+    <textarea  type="text" placeholder="Leave a comment here" [(ngModel)]="commentText"></textarea>
     <button (click)="addComment()">Post</button>
 </div>

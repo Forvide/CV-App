@@ -7,12 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
+  search: string = '';
+
+  skillsList: string[] = [
+    'C#', 'Angular', 'Asp.net Core', 'EntityFramework Core', 'MS SQL Server'
+  ];
   
   constructor() { }
 
   ngOnInit(): void {
   }
-
-  active = 1;
 
 }

@@ -2,19 +2,17 @@
 
 <hr/>
 
-<app-comment-form
-    (comment)="inputComment($event)"
-></app-comment-form>
-
-<hr/>
 
 <button class="btn btn-info" (click)="showCommentSection = !showCommentSection">Display comments</button>
 
 <div *appHideElement="showCommentSection">
+    <app-comment-form
+        (comment)="inputComment($event)"
+    ></app-comment-form>
     <app-comment-section
-    appStyle
-    *ngFor="let comment of comments"
-    [comment] = 'comment'
+        appStyle
+        *ngFor="let comment of comments"
+        [comment] = 'comment'
     ></app-comment-section>
 </div>
 <div class="date">{{date | date:'fullDate'}}</div>

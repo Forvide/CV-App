@@ -10,6 +10,7 @@ import { CommentSectionComponent } from './comment-section/comment-section.compo
 import { CommentFormComponent } from './comment-form/comment-form.component';
 import { StyleDirective } from './directives/style.directive';
 import { HideElementDirective } from './directives/hide-element.directive';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { HideElementDirective } from './directives/hide-element.directive';
     CommentSectionComponent,
     CommentFormComponent,
     StyleDirective,
-    HideElementDirective
+    HideElementDirective,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
