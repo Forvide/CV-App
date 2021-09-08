@@ -15,4 +15,4 @@
         [comment] = 'comment'
     ></app-comment-section>
 </div>
-<div class="date">{{date | date:'fullDate'}}</div>
+<div class="date">{{date$ | async | date:'HH:mm:ss'}}</div>

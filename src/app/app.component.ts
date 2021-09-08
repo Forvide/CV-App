@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 
 export interface CommentInterface {
   name: string,
@@ -13,7 +14,13 @@ export interface CommentInterface {
 })
 
 export class AppComponent {
-  date: Date = new Date();
+
+  date$: Observable<Date> = new Observable<Date>(obs => {
+    setInterval(() => {
+      obs.next(new Date())
+    }, 1000)
+  });
+  
   title = 'Amangeldy M CV';
   showCommentSection: boolean = false;
   
