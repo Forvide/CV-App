@@ -1,0 +1,19 @@
+.registerForm {    
+    max-width: fit-content;
+    margin-left: 40%;    
+}
+
+input {
+    &.ng-invalid.ng-touched {
+        border: 1px solid red;
+    }
+
+    &.ng-valid.ng-touched {
+        border: 1px solid green;
+    }
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    align-self: center;
+}

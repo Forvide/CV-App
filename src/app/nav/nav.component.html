@@ -30,6 +30,17 @@
         <p>Some text from me4</p>
       </ng-template>
     </li>    
+
+    <li class="navItem" [ngbNavItem]="5">
+      <a ngbNavLink *ngIf="!registerMode">Log in</a>
+      <a ngbNavLink *ngIf="registerMode">Register</a>
+      <ng-template ngbNavContent let-active>         
+        <app-login *ngIf="!registerMode" [registerMode]="registerMode"
+        (modeChange)="registerMode=$event"></app-login>
+        <app-register *ngIf="registerMode" [registerMode]="registerMode"
+        (modeChange)="registerMode=$event"></app-register>
+      </ng-template>
+    </li>    
   </ul>
   
   <div [ngbNavOutlet]="nav" class="mt-2"></div>

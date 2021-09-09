@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 
 export interface CommentInterface {
@@ -13,8 +14,8 @@ export interface CommentInterface {
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {
-
+export class AppComponent implements OnInit{
+  
   date$: Observable<Date> = new Observable<Date>(obs => {
     setInterval(() => {
       obs.next(new Date())
@@ -29,6 +30,10 @@ export class AppComponent {
     {name: 'AlsoMurat', commentText: 'Mytextasdggadf', id: 2},
     {name: 'NotMurat', commentText: 'Myte123123gadf', id: 3},
   ]
+  
+  ngOnInit(): void {
+    
+  }
 
   inputComment(comment) {
     this.comments.unshift(comment);

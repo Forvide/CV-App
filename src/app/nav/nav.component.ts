@@ -12,10 +12,11 @@ export class NavComponent implements OnInit {
   skillsList: string[] = [
     'C#', 'Angular', 'Asp.net Core', 'EntityFramework Core', 'MS SQL Server'
   ];
-  
+
+  registerMode: boolean = false;
+     
   constructor() { }
 
   ngOnInit(): void {
-  }
-
+  }  
 }

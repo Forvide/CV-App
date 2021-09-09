@@ -1,0 +1,25 @@
+<div class="loginForm">
+    <form class="card" [formGroup] = "loginForm" (ngSubmit)="submitLogin()">
+        <h2>Log in</h2>
+        <div>
+            <label>E-mail</label>
+            <input type="text" placeholder="E-mail" formControlName = "email">
+            <div class="validation" *ngIf="this.loginForm.get('email').invalid&& 
+            this.loginForm.get('email').touched">
+                <small>Enter valid e-mail address</small>
+            </div>
+        </div>
+        <div>
+            <label>Password</label>
+            <input type="password" placeholder="Password" formControlName = "password">
+            <div class="validation" *ngIf="this.loginForm.get('password').invalid && 
+                this.loginForm.get('password').touched">
+                <small>Password must contain at least 6 characters</small>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit" 
+        [disabled]="loginForm.invalid || loginForm.pending">
+        Login</button>
+        <button type="button" class="btn btn-info" (click)="switchMode()">Register</button>
+    </form>
+</div>

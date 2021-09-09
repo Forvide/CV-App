@@ -1,0 +1,64 @@
+
+<div class="registerForm">
+    <form [formGroup]="registerForm" (ngSubmit)="submitRegistration()">
+        <div>
+            <label>E-mail</label>
+            <input type="text" placeholder="E-mail" formControlName="email">
+            <div class="validation" *ngIf="this.registerForm.get('email').invalid
+             && this.registerForm.get('email').touched">
+                <small>Enter valid e-mail address</small>
+            </div>
+        </div>
+
+        <div>
+            <label>Password</label>
+            <input type="password" placeholder="Password" formControlName="password">
+            <div class="validation" *ngIf="this.registerForm.get('password').invalid
+            && this.registerForm.get('password').touched">
+                <small>Password must contain at least 6 characters</small>
+            </div>
+        </div>
+
+        <div>
+            <label>Your name</label>
+            <input type="text" placeholder="Name" formControlName="name">
+            <div class="validation" *ngIf="this.registerForm.get('name').invalid
+            && this.registerForm.get('name').touched">
+                <small>Name graph is compulsory</small>
+            </div>
+        </div>
+        
+        <div>
+            <label>Position</label>
+            <input type="text" placeholder="Position" formControlName="position">
+            <div class="validation" *ngIf="this.registerForm.get('position').invalid
+            && this.registerForm.get('position').touched">
+                <small></small>
+            </div>
+        </div>
+
+        <div formGroupName="address">
+            <h4>Address</h4>
+            <div>
+                <label>Country</label>
+                <input type="text" placeholder="Country" formControlName="country">
+                <!-- <div class="validation" *ngIf="this.registerForm.get('country').invalid
+            && this.registerForm.get('country').touched">
+                <small></small>
+                </div>                 -->
+            </div>
+    
+            <div>
+                <label>City</label>
+                <input type="text" placeholder="City" formControlName="city">
+                <!-- <div class="validation" *ngIf="this.registerForm.get('city').invalid
+            && this.registerForm.get('city').touched">
+                <small></small>
+                </div>                 -->
+            </div>
+        </div>        
+
+        <button class="btn btn-primary" type="submit" [disabled]="registerForm.invalid || registerForm.pending">Submit</button>
+        <button class="btn btn-info" (click)="switchMode()">Back</button>
+    </form>
+</div>
