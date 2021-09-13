@@ -1,9 +1,9 @@
+
 <app-nav></app-nav>
 
 <hr/>
 
-
-<button class="btn btn-info" (click)="showCommentSection = !showCommentSection">Display comments</button>
+<button class="btn btn-info comment-btn" (click)="showCommentSection = !showCommentSection">Display comments</button>
 
 <div *appHideElement="showCommentSection">
     <app-comment-form

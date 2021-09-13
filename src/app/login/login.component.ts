@@ -8,9 +8,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  @Input() registerMode: boolean;
-  @Output() modeChange = new EventEmitter<boolean>();
-
   loginForm: FormGroup;
  
   constructor() { }
@@ -30,8 +27,4 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  switchMode() {
-    this.registerMode = !this.registerMode;
-    this.modeChange.emit(this.registerMode);
-  }
 }

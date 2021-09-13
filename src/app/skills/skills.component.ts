@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-nav',
-  templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.scss']
+  selector: 'app-skills',
+  templateUrl: './skills.component.html',
+  styleUrls: ['./skills.component.scss']
 })
-export class NavComponent implements OnInit {
+export class SkillsComponent implements OnInit {
 
   search: string = '';
 
   skillsList: string[] = [
     'C#', 'Angular', 'Asp.net Core', 'EntityFramework Core', 'MS SQL Server'
   ];
-     
+
   constructor() { }
 
   ngOnInit(): void {
-  }  
+  }
+
 }

@@ -13,6 +13,11 @@ import { HideElementDirective } from './directives/hide-element.directive';
 import { FilterPipe } from './pipes/filter.pipe';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AboutComponent } from './about/about.component';
+import { SkillsComponent } from './skills/skills.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { ContactsComponent } from './contacts/contacts.component';
+import { ErrorComponent } from './error/error.component';
 
 
 @NgModule({
@@ -25,7 +30,12 @@ import { RegisterComponent } from './register/register.component';
     HideElementDirective,
     FilterPipe,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AboutComponent,
+    SkillsComponent,
+    ProjectsComponent,
+    ContactsComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,

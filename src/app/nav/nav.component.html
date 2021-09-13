@@ -1,46 +1,15 @@
-<ul ngbNav #nav="ngbNav" class="nav-tabs nav-justified">
-    <li class="navItem" [ngbNavItem]="1">
-      <a ngbNavLink>About me</a>
-      <ng-template ngbNavContent>  
-        <p>Some text from me</p>
-      </ng-template>
-    </li>
-
-    <li class="navItem" [ngbNavItem]="2">
-      <a ngbNavLink>Skills</a>
-
-      <ng-template ngbNavContent>
-        <input type="text" placeholder="search" [(ngModel)]="search">        
-        <ul *ngFor="let skill of skillsList | filter: search">
-          <li>{{skill}}</li>
-        </ul>
-      </ng-template>
-    </li>
-
-    <li class="navItem" [ngbNavItem]="3">
-      <a ngbNavLink>Projects</a>
-      <ng-template ngbNavContent let-active>         
-        <p>Some text from me3</p>
-      </ng-template>
-    </li>
-
-    <li class="navItem" [ngbNavItem]="4">
-      <a ngbNavLink>Contact me</a>
-      <ng-template ngbNavContent let-active>         
-        <p>Some text from me4</p>
-      </ng-template>
-    </li>    
-
-    <li class="navItem" [ngbNavItem]="5">
-      <a ngbNavLink *ngIf="!registerMode">Log in</a>
-      <a ngbNavLink *ngIf="registerMode">Register</a>
-      <ng-template ngbNavContent let-active>         
-        <app-login *ngIf="!registerMode" [registerMode]="registerMode"
-        (modeChange)="registerMode=$event"></app-login>
-        <app-register *ngIf="registerMode" [registerMode]="registerMode"
-        (modeChange)="registerMode=$event"></app-register>
-      </ng-template>
-    </li>    
+<nav class="navbar">
+  <h2>
+      <a routerLink="/">Amangeldy M</a>        
+  </h2>
+  <ul>
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a routerLink="/">About me</a></li>
+      <li routerLinkActive="active"><a routerLink="/skills">Skills</a></li>
+      <li routerLinkActive="active"><a routerLink="/projects">Projects</a></li>
+      <li routerLinkActive="active"><a routerLink="/contacts">Contacts</a></li>
+      <li><button class="btn" routerLink="/login">Login</button></li>
+      <li><button class="btn">Logout</button></li>
   </ul>
-  
-  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+</nav>
+
+<router-outlet></router-outlet>

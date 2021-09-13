@@ -1,0 +1,4 @@
+<input type="text" placeholder="search" [(ngModel)]="search">        
+        <ul *ngFor="let skill of skillsList | filter: search">
+          <li>{{skill}}</li>
+        </ul>
