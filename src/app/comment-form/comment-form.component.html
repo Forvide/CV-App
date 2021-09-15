@@ -1,5 +1,9 @@
-<div class="container comment-form">
-    <input class="nameInput" type="text" placeholder="Your name" [(ngModel)]="name">
-    <textarea  type="text" placeholder="Leave a comment here" [(ngModel)]="commentText"></textarea>
-    <button class="btn btn-primary" (click)="addComment()">Post</button>
+<div class="form__group">
+    <input class="form__field nameInput" type="text" placeholder="Name" [(ngModel)]="name">
+    <label for="name" class="form__label">Name</label>    
 </div>
+<div class="form__group">
+    <textarea class="form__field"  type="text" placeholder="Leave a comment here" [(ngModel)]="commentText"></textarea>
+    <label for="name" class="form__label">Leave a comment here</label>
+</div>
+<button class="btn" (click)="addComment()">Post</button>

@@ -1,5 +1,5 @@
+import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 
 export interface CommentInterface {
@@ -11,7 +11,11 @@ export interface CommentInterface {
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [trigger('comment', [
+    transition(':enter', [style({opacity: 0}), animate(1000, style({opacity: 1}))]),
+    transition(':leave', [style({opacity: 1}), animate(1000, style({opacity: 0}))])
+  ])]
 })
 
 export class AppComponent implements OnInit{

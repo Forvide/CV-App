@@ -1,18 +1,33 @@
-
-<app-nav></app-nav>
-
-<hr/>
-
-<button class="btn btn-info comment-btn" (click)="showCommentSection = !showCommentSection">Display comments</button>
-
-<div *appHideElement="showCommentSection">
-    <app-comment-form
-        (comment)="inputComment($event)"
-    ></app-comment-form>
-    <app-comment-section
-        appStyle
-        *ngFor="let comment of comments"
-        [comment] = 'comment'
-    ></app-comment-section>
+<div class="main">
+    <header>
+        <app-nav></app-nav>
+    </header>
+    
+    <hr/>
+    
+    <div>
+        <button 
+            class="btn comment-btn" 
+            (click)="showCommentSection = !showCommentSection"
+        >Display comments</button>
+    
+        <div [@comment] *appHideElement="showCommentSection">
+            <div class="comment-form">
+                <app-comment-form        
+                (comment)="inputComment($event)"
+                ></app-comment-form>
+            </div>
+    
+            <div class='comment-section'>
+                <app-comment-section        
+                    appStyle
+                    *ngFor="let comment of comments"
+                    [comment] = 'comment'
+                ></app-comment-section>
+            </div>        
+        </div>
+    </div>
+    
+    <div class="date">{{date$ | async | date:'HH:mm:ss'}}</div>
 </div>
-<div class="date">{{date$ | async | date:'HH:mm:ss'}}</div>
+

@@ -1,4 +1,8 @@
-<input type="text" placeholder="search" [(ngModel)]="search">        
-        <ul *ngFor="let skill of skillsList | filter: search">
-          <li>{{skill}}</li>
-        </ul>
+<div class="form__group content">
+  <input class="form__field" type="text" placeholder="search" [(ngModel)]="search">
+  <label for="search" class="form__label">Search</label>        
+  <ul *ngFor="let skill of skillsList | filter: search">
+    <li>{{skill}}</li>
+  </ul>
+</div>
+

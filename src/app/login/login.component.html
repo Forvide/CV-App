@@ -2,7 +2,7 @@
     <form class="card" [formGroup] = "loginForm" (ngSubmit)="submitLogin()">
         <h2>Log in</h2>
         <div>
-            <label>E-mail</label>
+            <label >E-mail</label>
             <input type="text" placeholder="E-mail" formControlName = "email">
             <div class="validation" *ngIf="this.loginForm.get('email').invalid&& 
             this.loginForm.get('email').touched">

@@ -1,6 +1,17 @@
 .comment-btn {
-    float: right;
+    position: relative;
 }
+
+.comment-form {
+    position: static;
+    width: 100%;
+    margin: 0.7rem 0.7rem;
+}
+
+.comment-section {
+    position: static;
+}
+
 .date {
     color: #fff;
     padding: 0.5rem;
@@ -10,3 +21,6 @@
     bottom: 0;
     right: 0;
 }
+
+
+
