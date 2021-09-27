@@ -19,6 +19,7 @@ import { SkillsComponent } from './skills/skills.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { ErrorComponent } from './error/error.component';
+import { TextInputComponent } from './_forms/text-input/text-input.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { ErrorComponent } from './error/error.component';
     SkillsComponent,
     ProjectsComponent,
     ContactsComponent,
-    ErrorComponent
+    ErrorComponent,
+    TextInputComponent
   ],
   imports: [
     BrowserModule,

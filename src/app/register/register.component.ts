@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -10,19 +10,35 @@ export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
 
-  constructor() { }
+  constructor(
+    private fb: FormBuilder
+  ) { }
 
   ngOnInit(): void {
-    this.registerForm = new FormGroup({
-      email: new FormControl('', [Validators.email, Validators.required]),
-      password: new FormControl('', [Validators.minLength(6), Validators.required]),
-      name: new FormControl('', [Validators.required]),
-      position: new FormControl(''),
-      address: new FormGroup({
-        country: new FormControl(''),
-        city: new FormControl('')
-      })     
+   this.initializeForm(); 
+  }
+
+  initializeForm() {
+    this.registerForm = this.fb.group({
+      email: ['', [Validators.email, Validators.required]],
+      password: ['', [Validators.minLength(6), Validators.required]],
+      confirmPassword: ['', [Validators.required, this.matchValues('password')]],
+      name: ['', [Validators.required]],
+      position: [''],
+      address: this.fb.group({
+        country: [''],
+        city: ['']
+      }) 
     })
+    this.registerForm.controls.password.valueChanges.subscribe(() => {
+      this.registerForm.controls.confirmPassword.updateValueAndValidity();
+    })
+  }
+
+  matchValues(matchTo: string): ValidatorFn {
+    return(control: AbstractControl) => {
+      return control?.value === control?.parent?.controls[matchTo].value ? null : {isMatching: true}
+    }
   }
 
   submitRegistration() {

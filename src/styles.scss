@@ -16,7 +16,7 @@ $textColor: #111111;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: $textColor;
+  color: $textColor;  
 }
 
 body {
@@ -28,6 +28,7 @@ body {
     // background-size: cover;
     background-color: $backgroundColor;
     color: rgb(51, 51, 51);
+    height: 100%;
 
     // font-family: 'Poppins', sans-serif; 
     display: flex;

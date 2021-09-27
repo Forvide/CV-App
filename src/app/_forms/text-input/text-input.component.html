@@ -1,0 +1,28 @@
+<div class="card">
+    <label>{{label}}</label>
+            <input 
+                [class.is-invalid]="ngControl.touched && ngControl.invalid"
+                type="{{type}}" 
+                placeholder="{{label}}" 
+                [formControl]="ngControl.control"
+            >
+            <div *ngIf="ngControl.touched">
+                <div class="validation" *ngIf="this.ngControl.control.errors?.required">
+                    <small>Enter valid {{label}} address</small>
+                </div>
+                <div class="validation" *ngIf="this.ngControl.control.errors?.minlength">
+                    <small>Password must contain at least 
+                        {{this.ngControl.control.errors.minlength['requiredLength']}} characters
+                    </small>
+                </div>
+                <div class="validation" *ngIf="this.ngControl.control.errors?.email">
+                    <small>Enter correct email
+                    </small>
+                </div>
+                <div class="validation" *ngIf="this.ngControl.control.errors?.isMatching">
+                    <small>Confirm password must match password
+                    </small>
+                </div>
+            </div>
+            
+</div>
